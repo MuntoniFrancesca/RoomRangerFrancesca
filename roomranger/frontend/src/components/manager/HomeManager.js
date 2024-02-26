@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../../App.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 
@@ -69,8 +70,8 @@ return (
     <div className='container'>
         <div className='row mt-3'>
             <div className='col'>
-                <Link className='btn btn-primary' to='/landing/assignroomform'>Assign Room</Link>
-                <Link className='btn btn-primary' to='/landing/translator'>Translator</Link>
+                <Link className='btn btn-custom' to='/landing/assignroomform'>Assign Room</Link>
+                <Link className='btn btn-custom' to='/landing/translator'>Translator</Link>
             </div>
             <div className='col'>
                 <div className='form-group'>

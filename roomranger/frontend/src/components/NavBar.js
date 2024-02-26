@@ -11,7 +11,7 @@ export default function NavBar() {
     }
     return (
         <div className='nbar'>
-            <nav className="navbar navbar-expand-sm navbar-dark" style={{ backgroundColor: '#343a40', marginBottom: '20px', marginLeft: '10px' }}>
+            <nav className="navbar navbar-expand-sm navbar-dark" style={{ backgroundColor: '#86b9b0', marginBottom: '20px', marginLeft: '10px' }}>
             <div className="text-left" style={{ marginLeft: '40px', marginTop: '25px' }}>
                     <a href='/landing' className='navbar-brand'><h2>RoomRanger</h2></a>
                 </div>

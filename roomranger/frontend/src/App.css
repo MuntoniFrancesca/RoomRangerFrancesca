@@ -9,3 +9,8 @@
   align-items: center;
   height: 100vh;
 }
+
+.btn-custom {
+  color: #041421;
+  background-color: red;
+}
