@@ -2,3 +2,10 @@
 .App{
   text-align:center;
 }
+
+.design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

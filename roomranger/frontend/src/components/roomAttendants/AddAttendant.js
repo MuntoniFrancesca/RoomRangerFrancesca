@@ -78,7 +78,6 @@ export default function AddAttendant() {
         <div className="row">
           <div className="col-md-20 offset-md-  rounded p-10 mt-2 shadow">
             <h2 className="text-center m-2">Add New Attendant</h2>
-
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-md-6 mb-3">
