@@ -55,10 +55,12 @@ const LoginComponent = () => {
   return (
     <div className='design'>
       <div className='wrapper'>
+        <div>
         {showErrorMessage && <div className='errorMessage'>Authentication Failed. Please check your credentials.</div>}
         {showSuccessMessage && <div className='successMessage'>Authenticated Successfully.</div>}
+        </div>
         <form onSubmit={handleSubmitLogin}>
-          <h1> Login </h1>
+          <h1>Login</h1>
           <div className='input-box'>
             <input type='text' name='username' placeholder='Username' value={username} onChange={handleUsernameChange} required />
             <FaCircleUser className='icon' />

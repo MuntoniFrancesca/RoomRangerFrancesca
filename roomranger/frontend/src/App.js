@@ -23,8 +23,8 @@ import LeaveList from './components/leaveRequest/LeaveList';
 import EditRequest from './components/leaveRequest/EditRequest';
 import HomeAttendant from './components/attendantRolePage/HomeAttendant';
 import UpdateStatus from './components/attendantRolePage/UpdateStatus';
-import Home from './components/hompage/Home';
-import Registration from './components/hompage/Registration';
+import Home from './components/homepage/Home';
+import Registration from './components/homepage/Registration';
 import About from './components/About';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -39,23 +39,23 @@ function AuthenticatedRoute({children}){
 }
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    document.body.className = isDarkMode ? 'dark-theme' : 'light-theme';
-  }, [isDarkMode]);
+  // useEffect(() => {
+  //   document.body.className = isDarkMode ? 'dark-theme' : 'light-theme';
+  // }, [isDarkMode]);
 
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
+  // const toggleTheme = () => {
+  //   setIsDarkMode((prevMode) => !prevMode);
+  // };
 
   return (
     <div className='App'>
       <AuthProvider>
-      <div className='mode-toggle' onClick={toggleTheme}>
+      {/* <div className='mode-toggle' onClick={toggleTheme}>
         <div className={`slider ${isDarkMode ? 'dark' : 'light'}`} />
         <span className='mode-text'>{isDarkMode ? 'Light' : 'Dark'}</span>
-      </div>
+      </div> */}
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -93,7 +93,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-      </AuthProvider> 
+      </AuthProvider>
     </div >
   );
 }

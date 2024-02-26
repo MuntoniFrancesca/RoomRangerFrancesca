@@ -12,14 +12,13 @@ export default function Profile() {
         lastName: '',
         email: '',
         phoneNumber: '',
-        pronoun: '',
         username: '',
         password: '',
         notes: '',
         workingDays: []
     });
 
-    const { firstName, lastName, email, phoneNumber, pronoun, username, password, notes, workingDays } = attendant;
+    const { firstName, lastName, email, phoneNumber, username, password, notes, workingDays } = attendant;
     const { id } = useParams();
 
     useEffect(() => {
@@ -73,10 +72,6 @@ export default function Profile() {
                                     <li className='list-group-item text-center mt-3'>
                                         <b> Last Name: </b>
                                         {attendant.lastName}
-                                    </li>
-                                    <li className='list-group-item text-center mt-3'>
-                                        <b> Pronoun: </b>
-                                        {attendant.pronoun}
                                     </li>
                                     <li className='list-group-item text-center mt-3'>
                                         <b> Email: </b>

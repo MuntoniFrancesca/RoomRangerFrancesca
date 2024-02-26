@@ -4,8 +4,7 @@ export const Footer = () => {
   return (
     <div>
         <footer className='footer'>
-           <Link to='/about' >About us</Link>
-            <span className='text-muted'>All Rights reserved 2024 @WomenThatCode</span>
+            <span className='text-muted'>All Rights reserved 2024 | @WomenThatCode</span>
         </footer>
     </div>
   )

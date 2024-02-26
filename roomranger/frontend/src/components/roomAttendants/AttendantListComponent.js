@@ -76,11 +76,11 @@ export default function AttendantListComponent() {
             <thead>
               <tr>
                 <th scope='col' className='text-center'>#</th>
-                <th scope='col' className='text-center'> EMP ID </th>
-                <th scope='col' className='col-md-2 text-center'> NAME </th>
-                <th scope='col' className='col-md-4 text-center'> EMAIL </th>
-                <th scope='col' className='col-md-2 text-center'> SCHEDULE </th>
-                <th scope='col' className=' col-md-3 text-center'> ACTION </th>
+                <th scope='col' className='text-center'> ID </th>
+                <th scope='col' className='col-md-2 text-center'>Name</th>
+                <th scope='col' className='col-md-4 text-center'>E-mail</th>
+                <th scope='col' className='col-md-2 text-center'>Schedule</th>
+                <th scope='col' className=' col-md-3 text-center'>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -100,7 +100,7 @@ export default function AttendantListComponent() {
                         : ''}
                     </td>
                     <td align='center'><Link className="btn btn-outline-success mx-2" to={`/landing/attendants/profile/${roomAttendant.id}`}>View</Link>
-                      <Link className="btn btn-outline-primary mx-2 " to={`/landing/attendants/update/${roomAttendant.id}`} >EDIT</Link>
+                      <Link className="btn btn-outline-primary mx-2 " to={`/landing/attendants/update/${roomAttendant.id}`} >Edit</Link>
                       <button className="btn btn-outline-danger mx-2" onClick={() => deleteAttendant(roomAttendant.id)}>Delete</button>
                     </td>
                   </tr>

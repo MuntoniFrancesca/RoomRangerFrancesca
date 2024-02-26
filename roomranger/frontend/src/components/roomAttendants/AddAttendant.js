@@ -14,7 +14,6 @@ export default function AddAttendant() {
     lastName: '',
     email: '',
     phoneNumber: '',
-    pronoun: '',
     username: '',
     password: '',
     notes: '',
@@ -22,7 +21,7 @@ export default function AddAttendant() {
   });
   const [attendantError, setAttendantError] = useState("");
 
-  const { id, firstName, lastName, email, phoneNumber, pronoun, username, password, notes, workingDays } = attendant;
+  const { id, firstName, lastName, email, phoneNumber, username, password, notes, workingDays } = attendant;
 
   // Handle changes to form inputs
   const handleChange = (e) => {
@@ -81,22 +80,14 @@ export default function AddAttendant() {
             <h2 className="text-center m-2">Add New Attendant</h2>
 
             <form onSubmit={handleSubmit}>
-              <div >
-
-                <label htmlFor="Pronoun" className="form-label "><h5>Pronoun:  </h5></label>
-                <input type="radio" id="he/him" name="pronoun" value="He/Him" onChange={handleChange} />He/Him
-                <input type="radio" id="she/her" name="pronoun" value="She/Her" onChange={handleChange} />She/Her
-                <input type="radio" id="they/them" name="pronoun" value="They/Them" onChange={handleChange} />They/Them
-              </div>
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label htmlFor="Name" className="form-label">
-                    {/* FIRST NAME */}
                   </label>
                   <input
                     type={"text"}
                     className="form-control"
-                    placeholder="FirstName"
+                    placeholder="First Name"
                     name="firstName"
                     value={firstName}
                     onChange={(e) => handleChange(e)}
@@ -104,12 +95,11 @@ export default function AddAttendant() {
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="Name" className="form-label">
-                    {/* LAST NAME */}
                   </label>
                   <input
                     type={"text"}
                     className="form-control"
-                    placeholder="LastName"
+                    placeholder="Last Name"
                     name="lastName"
                     value={lastName}
                     onChange={(e) => handleChange(e)}
@@ -118,12 +108,8 @@ export default function AddAttendant() {
               </div>
 
               <div className="row">
-
-
-
                 <div className="col-md-6 mb-3">
                   <label htmlFor="Email" className="form-label">
-                    {/* E-mail */}
                   </label>
                   <input
                     type={"text"}
@@ -136,7 +122,6 @@ export default function AddAttendant() {
                 </div>
                 <div className="col-md-4">
                   <label htmlFor="PhoneNumber" className="form-label">
-                    {/* PHONE NUMBER */}
                   </label>
                   <input
                     type={"tel"}
@@ -154,7 +139,6 @@ export default function AddAttendant() {
               <div className="row">
                 <div className=" col-md-6 mb-3">
                   <label htmlFor="Username" className="form-label">
-                    {/* Username */}
                   </label>
                   <input
                     type={"text"}
@@ -164,39 +148,37 @@ export default function AddAttendant() {
                     value={username}
                     onChange={(e) => handleChange(e)}
                   ></input>
+
                 </div>
-                <div className="col-md-6">
-                  <label htmlFor="Password" className="form-label">
-                    {/* Password */}
-                  </label>
-                  <input
-                    type={"password"}
-                    className="form-control"
-                    placeholder="Password"
-                    name="password"
-                    //value={password}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6 mb-3">
-                  <label htmlFor="Password" className="form-label">
-                    {/* Confirm Password */}
-                  </label>
-                  <input
-                    type={"password"}
-                    className="form-control"
-                    placeholder="Verify Password"
-                    name="password"
-                    // value={password}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
+                <div className="row">
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="Password" className="form-label">
+                    </label>
+                    <input
+                      type={"password"}
+                      className="form-control"
+                      placeholder="Password"
+                      name="password"
+                      onChange={(e) => handleChange(e)}
+                    ></input>
+                  </div>
+
+                  <div className="col-md-6 mb-3">
+                    <label htmlFor="Password" className="form-label">
+                    </label>
+                    <input
+                      type={"password"}
+                      className="form-control"
+                      placeholder="Verify Password"
+                      name="verifyPassword"
+                      onChange={(e) => handleChange(e)}
+                    ></input>
+                  </div>
                 </div>
 
                 <div className="col-md-6 mb-4">
                   <label htmlFor="notes" className="form-label ">
-                    {/* NOTES */}
+
                   </label>
                   <textarea class="form-control h-100 " id="notes" name="notes" placeholder="Notes" onChange={(e) => handleChange(e)}></textarea>
                 </div>
