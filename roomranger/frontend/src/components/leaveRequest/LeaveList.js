@@ -99,8 +99,8 @@ export default function LeaveList() {
             <tr>
               <th scope='col'>#</th>
               <th scope='col'>Name</th>
-              <th scope='col'>From Date</th>
-              <th scope='col'>To Date</th>
+              <th scope='col'>From</th>
+              <th scope='col'>To</th>
               <th scope='col'>Days</th>
               <th scope='col'>Reason</th>
               <th scope='col'>Status</th>
