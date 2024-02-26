@@ -93,7 +93,7 @@ export default function LeaveList() {
   return (
     <div className='container' >
       <div className='text-center py-8'>
-        <h2 className='text'>Leave Request List</h2>
+        <h2 className='text'>Leave Requests</h2>
         <table className='table table-striped shadow'>
           <thead>
             <tr>
