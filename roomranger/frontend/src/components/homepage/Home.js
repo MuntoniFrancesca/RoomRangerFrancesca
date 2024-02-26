@@ -12,9 +12,9 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-page-container">
-      <h1>RoomRanger</h1>
-      <div className="container mt-4 d-flex justify-content-center align-items-center ">
+    <div className="container">
+      <h1>Welcome to ROOM RANGER!</h1>
+      <div className="row">
         <Dropdown>
           <Dropdown.Toggle variant="Black" id="dropdown-basic">
             I am: {selectedRole}
@@ -27,30 +27,26 @@ const HomePage = () => {
               </Dropdown.Item>
             )}
             {(selectedRole !== 'RoomAttendant') && (
-              <Dropdown.Item onClick={() => handleRoleSelect('RoomAttendant')}>
+              <Dropdown.Item onClick={() => handleRoleSelect('Room Attendant')}>
                 Room Attendant
-              </Dropdown.Item>
-            )}
-            {(selectedRole === 'Manager') && (
-              <>
-                <Dropdown.Item>
-                  <Link to="/register" className="dropdown-link">Registration</Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/login" className="dropdown-link">Login</Link>
-                </Dropdown.Item>
-              </>
-            )}
-            {(selectedRole === 'RoomAttendant') && (
-              <Dropdown.Item>
-                <Link to="/login" className="dropdown-link">Login</Link>
               </Dropdown.Item>
             )}
           </Dropdown.Menu>
         </Dropdown>
       </div>
 
-  
+      {selectedRole === 'Manager' && (
+        <div className="container">
+          <Link to="/login" className="btn btn-primary">Login</Link>
+          <Link to="/register" className="btn btn-primary mr-2">Register</Link>
+        </div>
+      )}
+
+      {selectedRole === 'Room Attendant' && (
+        <div className="container">
+          <Link to="/login" className="btn btn-primary">Login</Link>
+        </div>
+      )}
     </div>
   );
 };
