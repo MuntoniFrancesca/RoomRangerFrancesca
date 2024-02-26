@@ -11,8 +11,6 @@ export default function AttendantListComponent() {
   const [attendants, setAttendants] = useState([]);
   const [days, setDays] = useState({});
   const navigate = useNavigate();
-  //const authContext=useAuth() 
-  //const username=authContext.username
 
   const { id } = useParams();
 
@@ -21,7 +19,7 @@ export default function AttendantListComponent() {
   },
     []
   );
-  const jwt = localStorage.getItem('jwt'); // Retrieve the JWT token from local storage
+  const jwt = localStorage.getItem('jwt');
 
   const authAxios = axios.create({
     baseURL: "http://localhost:8080",
@@ -37,28 +35,23 @@ export default function AttendantListComponent() {
       setAttendants(attendantsResponse.data);
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
         console.error("Error loading attendants:", error);
       }
-
-      // Handle error (e.g., by showing a message to the user)
     }
   };
 
   const deleteAttendant = async (id) => {
     try {
       await authAxios.get(`/roomAttendant/delete/${id}`);
-      loadAttendants(); // Refresh the list after deletion
+      loadAttendants();
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
         console.error("Error deleting attendant:", error);
       }
-      // Handle error (e.g., by showing a message to the user)
     }
   };
 
@@ -68,9 +61,6 @@ export default function AttendantListComponent() {
         <div className='py-8'>
           <h2 className='text-center'> Room Attendants List</h2></div>
         <form>
-
-          {/* <div className='py-2'>
-      <h2 className='text-center'> Room Attendants</h2> */}
           <div className='py-2 '></div>
           <table className='table border table-bordered table-striped shadow '>
             <thead>

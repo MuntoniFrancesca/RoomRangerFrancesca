@@ -11,11 +11,11 @@ export default function NavBar() {
     }
     return (
         <div className='nbar'>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
-                <div className='text-left'>
-                    <a href='/landing' className='navbar-brand '><h2>RoomRanger</h2></a>
+            <nav className="navbar navbar-expand-sm navbar-dark" style={{ backgroundColor: '#343a40', marginBottom: '20px', marginLeft: '10px' }}>
+            <div className="text-left" style={{ marginLeft: '40px', marginTop: '25px' }}>
+                    <a href='/landing' className='navbar-brand'><h2>RoomRanger</h2></a>
                 </div>
-                <ul className="navbar-nav">
+                <ul className="navbar-nav" style={{ marginLeft: '80px' }}>
                     <li className="nav-item">
                         <Link className="nav-link" aria-current="page" to="/landing">Home Page</Link >
                     </li>
