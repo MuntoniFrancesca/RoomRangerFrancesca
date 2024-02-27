@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../../App.css';
+import './HomeManager.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 

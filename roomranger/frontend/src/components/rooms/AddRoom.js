@@ -95,7 +95,6 @@ export default function AddRoom() {
                             </label>
                             <select name='roomType' value={room.roomType} onChange={onInputChange} required>
                                 <option value="" disabled>Select a type</option>
-                                {/* destructuring assignment  */}
                                 {types.map(([name, displayName]) => (
                                     <option key={name} value={name}>{displayName}</option>
                                 ))}

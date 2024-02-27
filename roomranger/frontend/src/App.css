@@ -1,3 +1,7 @@
+.btn-custom {
+  background-color: #ff0000;
+  color: #ffffff;
+}
 
 .App{
   text-align:center;
@@ -8,9 +12,4 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.btn-custom {
-  color: #041421;
-  background-color: red;
 }
