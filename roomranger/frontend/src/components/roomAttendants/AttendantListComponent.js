@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import NavBar from '../NavBar';
-import './Attendant.css';
 import { useAuth } from '../security/AuthContext';
 
 
@@ -56,10 +54,11 @@ export default function AttendantListComponent() {
   };
 
   return (
-    <div className='list'>
-      <div className='container'>
-        <div className='py-8'>
-          <h2 className='text-center'> Room Attendants List</h2></div>
+    <div className='container'>
+        <div className='row mt-3'>
+            <div className='col'>
+        <Link className='btn btn-custom' to='/landing/attendants/add'>Add New Attendant</Link>
+          </div>
         <form>
           <div className='py-2 '></div>
           <table className='table border table-bordered table-striped shadow '>
@@ -83,21 +82,19 @@ export default function AttendantListComponent() {
                     <td>{roomAttendant.id}</td>
                     <td>{roomAttendant.firstName}{' '}{roomAttendant.lastName}</td>
                     <td>{roomAttendant.email}</td>
-                    {/* <td >{roomAttendant.notes}</td> */}
                     <td>
                       {roomAttendant.workingDays && roomAttendant.workingDays.length > 0
                         ? roomAttendant.workingDays.join(', ')
                         : ''}
                     </td>
-                    <td align='center'><Link className="btn btn-outline-success mx-2" to={`/landing/attendants/profile/${roomAttendant.id}`}>View</Link>
-                      <Link className="btn btn-outline-primary mx-2 " to={`/landing/attendants/update/${roomAttendant.id}`} >Edit</Link>
-                      <button className="btn btn-outline-danger mx-2" onClick={() => deleteAttendant(roomAttendant.id)}>Delete</button>
+                    <td align='center'><Link className='btn btn-custom' to={`/landing/attendants/profile/${roomAttendant.id}`}>View</Link>
+                      <Link className='btn btn-custom' to={`/landing/attendants/update/${roomAttendant.id}`} >Edit</Link>
+                      <button className='btn btn-custom' onClick={() => deleteAttendant(roomAttendant.id)}>Delete</button>
                     </td>
                   </tr>
                 ))}
             </tbody>
           </table>
-          <Link className="btn btn-outline-success my-2 my-sm-0" to='/landing/attendants/add'>Add New Attendant</Link>
         </form>
       </div>
 

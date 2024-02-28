@@ -171,7 +171,7 @@ export default function TranslatorApi() {
             </select>
         </div>
         <div className="button-container">
-            <button onClick={handleTranslate}>Translate</button>
+            <button className="btn btn-custom" onClick={handleTranslate}>Translate</button>
         </div>
         <div className="result-container">
             <h1>{value}</h1>

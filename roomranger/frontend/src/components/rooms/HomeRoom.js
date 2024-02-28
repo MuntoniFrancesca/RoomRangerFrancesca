@@ -57,10 +57,13 @@ export default function HomeRoom() {
   }
 
   return (
-    <div className="container">
-      <div className="py-4">
-        {/* Here to give to link to addRoom */}
-        <Link className='btn btn-primary' to='/landing/rooms/addroom'>Add Room</Link>
+    <div className='container'>
+        <div className='row mt-3'>
+            <div className='col'>
+        <Link className='btn btn-custom' to='/landing/rooms/addroom'>Add Room</Link>
+        </div>
+        <form>
+          <div className='py-2 '></div>
         <table className=" table table-striped shadow">
           <thead>
             <tr>
@@ -94,7 +97,8 @@ export default function HomeRoom() {
             }
           </tbody>
         </table>
+        </form>
       </div>
     </div>
-  )
+  );
 }

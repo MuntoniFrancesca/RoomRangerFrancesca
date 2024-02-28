@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
+import '../../App.css'
 
 const HomePage = () => {
   const [selectedRole, setSelectedRole] = useState('');
@@ -37,14 +38,14 @@ const HomePage = () => {
 
       {selectedRole === 'Manager' && (
         <div className="container">
-          <Link to="/login" className="btn btn-primary">Login</Link>
-          <Link to="/register" className="btn btn-primary mr-2">Register</Link>
+          <Link to="/login" className="btn btn-custom">Login</Link>
+          <Link to="/register" className="btn btn-custom">Register</Link>
         </div>
       )}
 
       {selectedRole === 'Room Attendant' && (
-        <div className="container">
-          <Link to="/login" className="btn btn-primary">Login</Link>
+        <div>
+          <Link to="/login" className="btn btn-custom">Login</Link>
         </div>
       )}
     </div>

@@ -61,10 +61,11 @@ const HomeAttendant = () => {
 
   return (
     <div className='container'>
-      <div>
-        <Link className='btn btn-primary' to='/landing/translator'>Translator</Link>
+        <div className='row mt-3'>
+            <div className='col'>
+        <Link className='btn btn-custom' to='/landing/translator'>Translator</Link>
         </div>
-      <div className='py=4'>
+        <div className='py-2 '></div>
         <table className='table table-striped  shadow'>
           <thead>
             <tr>

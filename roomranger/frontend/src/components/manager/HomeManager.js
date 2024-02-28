@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './HomeManager.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 
@@ -73,7 +72,9 @@ return (
                 <Link className='btn btn-custom' to='/landing/assignroomform'>Assign Room</Link>
                 <Link className='btn btn-custom' to='/landing/translator'>Translator</Link>
             </div>
-            <div className='col'>
+            </div>
+            <div className='row mt-3'>
+                <div className='col'>
                 <div className='form-group'>
                     <label htmlFor="roomNumberFilter">Filter by room number:</label>
                     <input
@@ -120,6 +121,7 @@ return (
                 </div>
             </div>
         </div>
+        <div className='py-2 '></div>
         <table className='table border shadow'>
             <thead style={{ textAlign: 'left' }}>
                 <tr>

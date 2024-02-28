@@ -91,9 +91,12 @@ export default function LeaveList() {
   }
 
   return (
-    <div className='container' >
-      <div className='text-center py-8'>
-        <h2 className='text'>Leave Requests</h2>
+    <div className='container'>
+        <div className='row mt-3'>
+            <div className='col'>
+            <Link className='btn btn-custom' to='/landing/leave/form'>New Leave Request</Link>
+        </div>
+        <div className='py-2 '></div>
         <table className='table table-striped shadow'>
           <thead>
             <tr>
@@ -128,8 +131,7 @@ export default function LeaveList() {
             }
           </tbody>
         </table>
-        <Link className='btn btn-primary' to='/landing/leave/form'>New Leave Request</Link>
+</div>
       </div>
-    </div>
   )
 }
