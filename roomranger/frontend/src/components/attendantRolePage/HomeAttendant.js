@@ -83,11 +83,8 @@ const HomeAttendant = () => {
             {assignedRooms.sort((a, b) => statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status)).map((assignedRoom, index) => (
               <tr>
                 <th scope="row" key={index}>{index + 1}</th>
-                <td>
-                  <Link to={`/landing/roomattendant/assignedroom/${assignedRoom.id}`}>
-                    {assignedRoom.room.roomNumber}
-                  </Link>
-                </td>
+                <td>{assignedRoom.room.roomNumber}
+                  </td>
                 <td>{assignedRoom.guest}</td>
                 <td>{assignedRoom.checkIn}</td>
                 <td>{assignedRoom.checkOut}</td>

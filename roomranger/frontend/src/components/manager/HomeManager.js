@@ -160,7 +160,7 @@ return (
                 {filteredAssignedRooms.map((assignedRoom, index) => (
                     <tr key={"assignedroom" + index}>
                         <th scope="row" key={index}>{index + 1}</th>
-                        <td>{assignedRoom.room.roomNumber}</td>
+                        <td><Link to={`/landing/rooms/viewroom/${assignedRoom.room.id}`} style={{ color: 'green' }}>{assignedRoom.room.roomNumber}</Link></td>
                         <td>{assignedRoom.roomAttendant.firstName}</td>
                         <td>{assignedRoom.guest}</td>
                         <td>{assignedRoom.numberOfGuests}</td>

@@ -16,7 +16,7 @@ export default function ViewRooms() {
     useEffect(() => {
         fetchType();
         loadRoom();
-    })
+    }, [])
 
     const jwt = localStorage.getItem('jwt');
 
@@ -59,27 +59,27 @@ export default function ViewRooms() {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
-                    <h2 className='text-center m-4'>Room Details</h2>
-                    <div className='card'>
-                        <div className='card-header'>
-                            <ul className='list-group list-group-flush'>
-                                <li className='list-group-item'>
-                                    <b> Room Number: </b>
-                                    {room.roomNumber}
-                                </li>
-                                <li className='list-group-item'>
-                                    <b> Room Type: </b>
-                                    {type}
-                                </li>
-                                <li className='list-group-item'>
-                                    <b> Room Available: </b>
-                                    {room.available ? "Yes" : "No"}
-                                </li>
-                            </ul>
-                        </div>
+                <div className='col-md-6 offset-md-3 mt-2'>
+                    <h2 className='text-center mb-4'>Room Details</h2>
+                    <table className='table'>
+                        <tbody>
+                            <tr>
+                                <th>Room Number:</th>
+                                <td>{room.roomNumber}</td>
+                            </tr>
+                            <tr>
+                                <th>Room Type:</th>
+                                <td>{type}</td>
+                            </tr>
+                            <tr>
+                                <th>Room Available:</th>
+                                <td>{room.available ? "Yes" : "No"}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div className='text-center'>
+                        <Link className='btn btn-primary' to={'/landing/rooms'}>Back to Home</Link>
                     </div>
-                    <Link className='btn btn-primary my-2' to={'/landing/rooms'}>Back to Home</Link>
                 </div>
             </div>
         </div>

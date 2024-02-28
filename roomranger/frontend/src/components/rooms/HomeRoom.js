@@ -79,10 +79,7 @@ export default function HomeRoom() {
               rooms.map((room, index) => (
                 <tr>
                   <th scope="row" key={index}>{index + 1}</th>
-                  <td>
-                    <Link to={`/landing/rooms/editroom/${room.id}`}>
-                      {room.roomNumber}
-                    </Link>
+                  <td>{room.roomNumber}
                   </td>
                   {/* types is an object after passing from spring boot */}
                   <td>{types[room.roomType]}</td>

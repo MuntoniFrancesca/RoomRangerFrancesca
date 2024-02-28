@@ -72,143 +72,140 @@ export default function AddAttendant() {
 
 
   return (
-    <div className="add">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-20 offset-md-  rounded p-10 mt-2 shadow">
-            <h2 className="text-center m-2">Add New Attendant</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="row">
-                <div className="col-md-6 mb-3">
-                  <label htmlFor="Name" className="form-label">
-                  </label>
-                  <input
-                    type={"text"}
-                    className="form-control"
-                    placeholder="First Name"
-                    name="firstName"
-                    value={firstName}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-                </div>
-                <div className="col-md-6 mb-3">
-                  <label htmlFor="Name" className="form-label">
-                  </label>
-                  <input
-                    type={"text"}
-                    className="form-control"
-                    placeholder="Last Name"
-                    name="lastName"
-                    value={lastName}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-md-6 mb-3">
-                  <label htmlFor="Email" className="form-label">
-                  </label>
-                  <input
-                    type={"text"}
-                    className="form-control"
-                    placeholder="E-mail"
-                    name="email"
-                    value={email}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-                </div>
-                <div className="col-md-4">
-                  <label htmlFor="PhoneNumber" className="form-label">
-                  </label>
-                  <input
-                    type={"tel"}
-                    className="form-control"
-                    placeholder="Phone Number"
-                    name="phoneNumber"
-                    value={phoneNumber}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-                </div>
-              </div>
-
-
-
-              <div className="row">
-                <div className=" col-md-6 mb-3">
-                  <label htmlFor="Username" className="form-label">
-                  </label>
-                  <input
-                    type={"text"}
-                    className="form-control"
-                    placeholder="Username"
-                    name="username"
-                    value={username}
-                    onChange={(e) => handleChange(e)}
-                  ></input>
-
-                </div>
-                <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="Password" className="form-label">
-                    </label>
-                    <input
-                      type={"password"}
-                      className="form-control"
-                      placeholder="Password"
-                      name="password"
-                      onChange={(e) => handleChange(e)}
-                    ></input>
-                  </div>
-
-                  <div className="col-md-6 mb-3">
-                    <label htmlFor="Password" className="form-label">
-                    </label>
-                    <input
-                      type={"password"}
-                      className="form-control"
-                      placeholder="Verify Password"
-                      name="verifyPassword"
-                      onChange={(e) => handleChange(e)}
-                    ></input>
-                  </div>
-                </div>
-
-                <div className="col-md-6 mb-4">
-                  <label htmlFor="notes" className="form-label ">
-
-                  </label>
-                  <textarea class="form-control h-100 " id="notes" name="notes" placeholder="Notes" onChange={(e) => handleChange(e)}></textarea>
-                </div>
-              </div >
-              <div className="container" >
-                <label htmlFor="workingDays" className="form-label col-md-1 checkbox-inline"><h5>Working Days</h5></label>
-                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-                  <div className="form-check" key={day}>
-                    <input
-                      type="checkbox"
-                      className="checkbox-inline"
-                      id={day}
-                      name="workingDays"
-                      value={day}
-                      checked={attendant.workingDays.includes(day)}
-                      onChange={handleChange}
-                    />
-                    <label className="form-check-label" htmlFor={day}>{day}</label>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 offset-md- border rounded p-4 mt-2 shadow">
+          <h2 className="text-center m-4">New Attendant</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="firstName" className="form-label">
+                First Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="firstName"
+                value={firstName}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="lastName" className="form-label">
+                Last Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="lastName"
+                value={lastName}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="email"
+                value={email}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="phoneNumber" className="form-label">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                className="form-control"
+                name="phoneNumber"
+                value={phoneNumber}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                name="username"
+                value={username}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="verifyPassword" className="form-label">
+                Verify Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                name="verifyPassword"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="row">
+            <div className="md-3">
+              <label htmlFor="notes" className="form-label">
+                Notes
+              </label>
+              <textarea
+                className="form-control"
+                id="notes"
+                name="notes"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="col-md-3">
+              <label htmlFor="workingDays" className="form-label">
+                Working Days
+              </label>
+                {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day) => (
+                  <div className="col-md-3" key={day}>
+                    <div className="form-check">
+                      <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id={day}
+                        name="workingDays"
+                        value={day}
+                        checked={attendant.workingDays.includes(day)}
+                        onChange={handleChange}
+                      />
+                      <label className="form-check-label" htmlFor={day}>
+                        {day}
+                      </label>
+                      
+                    </div>
                   </div>
                 ))}
               </div>
-              <div>
-                <button type='submit' className='btn btn-action mx-2'>Submit</button>
-                <Link className='btn btn-action mx-2' to='/landing/attendants' >Cancel</Link>
-                <button type="reset" className='btn btn-action mx-2'> Reset</button>
-              </div>
-            </form>
-            {/* </div> */}
-          </div>
+         
+            <button type="submit" className="btn btn-action mx-2">
+              Submit
+            </button>
+            <Link className="btn btn-danger mx-2" to="/landing/attendants">
+              Cancel
+            </Link>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   );
 }
-
