@@ -61,7 +61,7 @@ export default function AttendantListComponent() {
           </div>
         <form>
           <div className='py-2 '></div>
-          <table className='table border table-bordered table-striped shadow '>
+          <table className='table border table-bordered shadow'>
             <thead>
               <tr>
                 <th scope='col' className='text-center'>#</th>
@@ -87,9 +87,9 @@ export default function AttendantListComponent() {
                         ? roomAttendant.workingDays.join(', ')
                         : ''}
                     </td>
-                    <td align='center'><Link className='btn btn-custom' to={`/landing/attendants/profile/${roomAttendant.id}`}>View</Link>
-                      <Link className='btn btn-custom' to={`/landing/attendants/update/${roomAttendant.id}`} >Edit</Link>
-                      <button className='btn btn-custom' onClick={() => deleteAttendant(roomAttendant.id)}>Delete</button>
+                    <td align='center'><Link className='btn btn-action mx-2' to={`/landing/attendants/profile/${roomAttendant.id}`}>View</Link>
+                      <Link className='btn btn-action mx-2' to={`/landing/attendants/update/${roomAttendant.id}`} >Edit</Link>
+                      <button className='btn btn-danger mx-2' onClick={() => deleteAttendant(roomAttendant.id)}>Delete</button>
                     </td>
                   </tr>
                 ))}

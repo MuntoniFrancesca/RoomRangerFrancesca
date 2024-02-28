@@ -199,9 +199,9 @@ export default function AddAttendant() {
                 ))}
               </div>
               <div>
-                <button type='submit' className='btn btn-outline-success align-center my-4'>Submit</button>
-                <Link className='btn btn-outline-danger mx-2 align-center my-6' to='/landing/attendants' >Cancel</Link>
-                <button type="reset" className='btn btn-outline-primary align-center my-6'> Reset</button>
+                <button type='submit' className='btn btn-action mx-2'>Submit</button>
+                <Link className='btn btn-action mx-2' to='/landing/attendants' >Cancel</Link>
+                <button type="reset" className='btn btn-action mx-2'> Reset</button>
               </div>
             </form>
             {/* </div> */}

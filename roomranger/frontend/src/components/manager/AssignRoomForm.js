@@ -314,8 +314,8 @@ export default function AssignRoom() {
                 ))}
               </select>
             </div>
-            <button type='submit' className='btn btn-outline-primary'>Submit</button>
-            <Link className='btn btn-outline-danger mx-2' to="/landing">Cancel</Link>
+            <button type='submit' className='btn btn-action mx-2'>Submit</button>
+            <Link className='btn btn-action mx-2' to="/landing">Cancel</Link>
           </form>
         </div>
       </div>

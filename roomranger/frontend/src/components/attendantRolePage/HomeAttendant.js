@@ -66,7 +66,7 @@ const HomeAttendant = () => {
         <Link className='btn btn-custom' to='/landing/translator'>Translator</Link>
         </div>
         <div className='py-2 '></div>
-        <table className='table table-striped  shadow'>
+        <table className='table border table-bordered shadow'>
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -92,12 +92,12 @@ const HomeAttendant = () => {
                 <td>{assignedRoom.checkIn}</td>
                 <td>{assignedRoom.checkOut}</td>
                 <td>{tasks[assignedRoom.task]}</td>
-                <td style={{ backgroundColor: getStatusColor(assignedRoom.status) }}>{statuses[assignedRoom.status]}</td>
+                <td style={{ color: getStatusColor(assignedRoom.status)}}>{statuses[assignedRoom.status]}</td>
                 <td>
                   {/* {assignedRoom.status !== 'INSPECTED' && (
                     <Link className='btn btn-outline-primary' to={`/landing/roomattendant/assignedroom/${assignedRoom.id}`}>Update</Link>
                   )} */}
-                  <Link className='btn btn-outline-primary' to={`/landing/roomattendant/assignedroom/${assignedRoom.id}`}>Update</Link >
+                  <Link className='btn btn-custom' to={`/landing/roomattendant/assignedroom/${assignedRoom.id}`}>Update</Link >
                 </td>
               </tr>
             ))}

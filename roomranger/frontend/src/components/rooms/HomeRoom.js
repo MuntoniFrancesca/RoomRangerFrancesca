@@ -64,7 +64,7 @@ export default function HomeRoom() {
         </div>
         <form>
           <div className='py-2 '></div>
-        <table className=" table table-striped shadow">
+        <table className='table border table-bordered shadow'>
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -88,9 +88,9 @@ export default function HomeRoom() {
                   <td>{types[room.roomType]}</td>
                   <td>{room.available ? "Yes" : "No"}</td>
                   <td>
-                    <Link className='btn btn-outline-success mx-2' to={`/landing/rooms/viewroom/${room.id}`}>View</Link>
-                    <Link className='btn btn-outline-primary mx-2' to={`/landing/rooms/editroom/${room.id}`}>Edit</Link>
-                    <button className='btn btn-outline-danger mx-2' onClick={() => deletRoom(room.id)}>Delete</button>
+                    <Link className='btn btn-action mx-2' to={`/landing/rooms/viewroom/${room.id}`}>View</Link>
+                    <Link className='btn btn-action mx-2' to={`/landing/rooms/editroom/${room.id}`}>Edit</Link>
+                    <button className='btn btn-danger mx-2' onClick={() => deletRoom(room.id)}>Delete</button>
                   </td>
                 </tr>
               ))
