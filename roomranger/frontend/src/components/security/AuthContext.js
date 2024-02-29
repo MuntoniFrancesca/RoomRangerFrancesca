@@ -8,25 +8,21 @@ export default function AuthProvider({children}){
     const [number,setNumber]=useState(0)
     const[isAuthenticated,setAuthenticated]=useState(false)
     const[username,setUsername]=useState(null)
-    // setInterval=(()=>setNumber(number+1),10000)
 
     function login(jwt,loginSuccess){
         if(loginSuccess==='true'){
-            localStorage.setItem('jwt', jwt); // Save the JWT in local storage
+            localStorage.setItem('jwt', jwt);
 
             const decodedJwt = parseJwt(jwt);
             if (decodedJwt) {
-              // Store username and roles in local storage
               localStorage.setItem('username', decodedJwt.sub); 
               localStorage.setItem('roles', decodedJwt.roles);
             }
             setUsername(decodedJwt.sub)
             setAuthenticated(decodedJwt.roles)
-             
         }else{
              setAuthenticated(false)
              setUsername(null)
-            
            }
     }
 
@@ -54,7 +50,7 @@ export default function AuthProvider({children}){
       }
 
     return(
-        <AuthContext.Provider value={{number,isAuthenticated,login,logout,username}}>
+        <AuthContext.Provider value={{number,isAuthenticated,login,logout,username,isManager: isAuthenticated === "manager"}}>
             {children}
         </AuthContext.Provider>
     )

@@ -29,6 +29,7 @@ import About from './components/About';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import  AuthProvider, { useAuth } from './components/security/AuthContext';
+import Landing from './components/Landing';
 
 function AuthenticatedRoute({children}){
   const authContext=useAuth()
@@ -63,6 +64,7 @@ function App() {
           <Route path='login' element={<LoginPage />} />
           <Route path='about' element={<About />} />
           <Route path='/landing' element={<NavBar />} >
+          <Route index element={<Landing />} />
             <Route index element={<HomeManager />} />
             <Route path='assignroomform' element={<AssignRoom />} />
             <Route path='translator' element={<TranslatorApi />} />

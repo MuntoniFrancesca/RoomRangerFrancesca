@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../security/AuthContext';
 
 export default function LeaveList() {
   const [leaveList, setLeaveList] = useState([]);
   const navigate = useNavigate();
   const [refreshId, setRefreshId] = useState(Symbol()); // This is used to render the list after approve or reject
+  const { isManager } = useAuth();
+
 
   useEffect(() => {
     loadRequestList();
@@ -22,45 +25,43 @@ export default function LeaveList() {
 
   const loadRequestList = async () => {
     try {
+      const { data: roomAttendant } = await authAxios.get(`/roomAttendant/current`);
       const response = await authAxios.get("/leave");
       const leaveRequests = response.data.filter(leave => {
         const startDateYear = new Date(leave.startDate).getFullYear();
         const currentYear = new Date().getFullYear();
+        if (!isManager) {
+          return leave.roomAttendant.id === roomAttendant.id && startDateYear === currentYear;
+        }
         return startDateYear === currentYear;
       })
       setLeaveList(leaveRequests);
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
-        // Handle other errors
         console.error('Error fetching leave requests:', error);
       }
     }
 
   }
 
-  //for manager to approve leave request
   const approve = async (id) => {
     try {
       await authAxios.put(`/leave/${id}/approve`);
       alert("You have approved this leave request!")
       setRefreshId(Symbol());
       console.log(refreshId);
-      // window.location.reload();
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
-        // Handle other errors
         alert(error.response.data.message);
       }
     }
 
   }
-  //for manager to reject leave request
+
   const reject = async (id) => {
     try {
       await authAxios.put(`/leave/${id}/reject`);
@@ -68,10 +69,8 @@ export default function LeaveList() {
       setRefreshId(Symbol());
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
-        // Handle other errors
         alert(error.response.data.message);
       }
     }
@@ -92,9 +91,9 @@ export default function LeaveList() {
 
   return (
     <div className='container'>
-        <div className='row mt-3'>
-            <div className='col'>
-            <Link className='btn btn-custom' to='/landing/leave/form'>New Leave Request</Link>
+      <div className='row mt-3'>
+        <div className='col'>
+        {!isManager ? <Link className='btn btn-custom' to='/landing/leave/form'>New Leave Request</Link> : null}
         </div>
         <div className='py-2 '></div>
         <table className='table table-striped shadow'>
@@ -107,7 +106,7 @@ export default function LeaveList() {
               <th scope='col'>Days</th>
               <th scope='col'>Reason</th>
               <th scope='col'>Status</th>
-              <th scope='col'>Action</th>
+              {isManager ? <th scope='col'>Action</th> : null}
             </tr>
           </thead>
           <tbody>
@@ -121,17 +120,17 @@ export default function LeaveList() {
                   <td>{leaveRequest.duration}</td>
                   <td>{leaveRequest.reason}</td>
                   <td style={{ backgroundColor: getStatusColor(leaveRequest.status) }}>{leaveRequest.status}</td>
-                  <td>
+                  {isManager ? <td>
                     <button className='btn btn-outline-primary mx-2' onClick={() => approve(leaveRequest.id)}>Approve</button>
                     <button className='btn btn-outline-danger mx-2' onClick={() => reject(leaveRequest.id)}>Reject</button>
                     {/* <Link className='btn btn-outline-primary mx-2' to={`/landing/leave/edit/${leaveRequest.id}`}>Edit</Link> */}
-                  </td>
+                  </td> : null}
                 </tr>
               ))
             }
           </tbody>
         </table>
-</div>
       </div>
+    </div>
   )
 }
