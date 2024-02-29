@@ -159,7 +159,7 @@ export default function EditAssignedRoom() {
   return (
     <div className='container'>
       <div className="row">
-        <div className='col-md-6 offset-md border rounded p-4 mt-2 shadow'>
+        <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
           <h2 className='text-center m-4'>Edit Assigned Room</h2>
           <form onSubmit={(e) => onFormSubmit(e)}>
             <div className='mb-3'>
@@ -283,8 +283,8 @@ export default function EditAssignedRoom() {
                 ))}
               </select>
             </div>
-            <button type='submit' className='btn btn-outline-primary'>Submit</button>
-            <Link className='btn btn-outline-danger mx-2' to="/landing">Cancel</Link>
+            <button type='submit' className='btn btn-action mx-2'>Submit</button>
+            <Link className='btn btn-danger mx-2' to="/landing">Cancel</Link>
           </form>
         </div>
       </div>

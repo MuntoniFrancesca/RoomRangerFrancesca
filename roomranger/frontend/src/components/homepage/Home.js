@@ -14,10 +14,13 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Welcome to ROOM RANGER!</h1>
+      <div style={{ marginTop: '100px' }}>
+      <h1>Welcome to ROOM RANGER</h1>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '20vh' }}>
       <div className="row">
         <Dropdown>
-          <Dropdown.Toggle variant="Black" id="dropdown-basic">
+          <Dropdown.Toggle variant="black" id="dropdown-basic">
             I am: {selectedRole}
           </Dropdown.Toggle>
 
@@ -35,7 +38,7 @@ const HomePage = () => {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-
+</div>
       {selectedRole === 'Manager' && (
         <div className="container">
           <Link to="/login" className="btn btn-custom">Login</Link>

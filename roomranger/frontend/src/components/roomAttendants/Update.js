@@ -94,18 +94,11 @@ const authAxios = axios.create({
     <div className="add">
       <div className="container">
         <div className="row">
-          <div className="col-md-20 offset-md-  rounded p-10 mt-2 shadow">
+        <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
             <h2 className="text-center m-2">Update</h2>
 
 
           <form onSubmit={(e) => onSubmit(e)}>
-          <div >
-            
-            <label htmlFor="Pronoun" className="form-label "><h5>Pronoun:  </h5></label>
-             <input type="radio" id="he/him" name="pronoun" value={attendants.pronoun}  onChange={(e) => handleChange(e)} />He/Him
-             <input type="radio" id="she/her" name="pronoun" value={attendants.pronoun}  onChange={(e) => handleChange(e)} />She/Her
-             <input type="radio" id="they/them" name="pronoun" value={attendants.pronoun}  onChange={(e) => handleChange(e)} />They/Them
-            </div>
             <div className="row">
               <div className="col-md-6 mb-3">
               <label htmlFor="Name" className="form-label ">
@@ -232,9 +225,9 @@ const authAxios = axios.create({
                 </div>
           
                 <div >
-                <button type='submit' className='btn btn-outline-success align-center my-3'>Submit</button>
-                <Link className='btn btn-outline-danger mx-2 align-center my-4' to='/landing/attendants'>Cancel</Link>
-                <button type="reset" className='btn btn-outline-primary align-center my-6'> Reset</button>
+                <button type='submit' className='btn btn-success mx-2'>Submit</button>
+                <Link className='btn btn-danger mx-2' to='/landing/attendants'>Cancel</Link>
+                <button type="reset" className='btn btn-action mx-2'> Reset</button>
               </div>
           </form>
         </div>

@@ -61,7 +61,7 @@ export default function ViewRooms() {
             <div className='row'>
                 <div className='col-md-6 offset-md-3 mt-2'>
                     <h2 className='text-center mb-4'>Room Details</h2>
-                    <table className='table'>
+                    <table className='table border table-bordered shadow'>
                         <tbody>
                             <tr>
                                 <th>Room Number:</th>
@@ -78,7 +78,7 @@ export default function ViewRooms() {
                         </tbody>
                     </table>
                     <div className='text-center'>
-                        <Link className='btn btn-primary' to={'/landing/rooms'}>Back to Home</Link>
+                        <Link className='btn btn-action mx-2' to={'/landing/rooms'}>Back</Link>
                     </div>
                 </div>
             </div>

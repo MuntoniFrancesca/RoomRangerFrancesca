@@ -79,8 +79,7 @@ export default function HomeRoom() {
               rooms.map((room, index) => (
                 <tr>
                   <th scope="row" key={index}>{index + 1}</th>
-                  <td>{room.roomNumber}
-                  </td>
+                  <td>{room.roomNumber}</td>
                   {/* types is an object after passing from spring boot */}
                   <td>{types[room.roomType]}</td>
                   <td>{room.available ? "Yes" : "No"}</td>

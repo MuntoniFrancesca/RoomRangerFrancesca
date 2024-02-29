@@ -95,8 +95,8 @@ export default function EditRoom() {
                                 />
                             </label>
                         </div>
-                        <button type='submit' className='btn btn-outline-primary'>Submit</button>
-                        <Link className='btn btn-outline-danger mx-2' to='/landing/rooms'>Cancel</Link>
+                        <button type='submit' className='btn btn-success mx-2'>Submit</button>
+                        <Link className='btn btn-danger mx-2' to='/landing/rooms'>Cancel</Link>
                     </form>
                 </div>
             </div>
