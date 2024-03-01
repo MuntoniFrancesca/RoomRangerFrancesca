@@ -41,8 +41,8 @@ const HomePage = () => {
 </div>
       {selectedRole === 'Manager' && (
         <div className="container">
-          <Link to="/login" className="btn btn-custom">Login</Link>
-          <Link to="/register" className="btn btn-custom">Register</Link>
+          <Link to="/login" className="btn btn-custom mx-2">Login</Link>
+          <Link to="/register" className="btn btn-custom mx-2">Register</Link>
         </div>
       )}
 

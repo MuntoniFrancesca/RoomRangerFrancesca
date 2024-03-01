@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './Registration.css';
 
 export default function Registration() {
   let navigate = useNavigate();
@@ -67,8 +66,10 @@ export default function Registration() {
   const { username, firstName, lastName, email, password, confirmPassword } = user;
 
   return (
-    <div className="container mt-5 registration-form">
-      <h2>Registration Form</h2>
+    <div className='container'>
+      <div className="row">
+        <div className='col-md-6 offset-md border rounded p-4 mt-2 shadow'>
+          <h2 className='text-center m-4'>New Manager</h2>
       <form onSubmit={onRegistrationSubmit}>
         {error && <div className="alert alert-danger">{error}</div>}
         {successMessage && <div className="alert alert-success">{successMessage}</div>}
@@ -105,26 +106,29 @@ export default function Registration() {
             <div className="mb-3">
               <label htmlFor="password" className="form-label">Password</label>
               <input type={showPassword ? "text" : "password"} className="form-control" id="password" name="password" value={password} onChange={onInputChange} required />
-              <button className="btn btn-outline-success" type="button" onClick={togglePasswordVisibility}>
-                {showPassword ? "Hide" : "Show"}
+              {/* <button className="btn btn-outline-success" type="button" onClick={togglePasswordVisibility}>
+              </button> */}
+              <button className="btn btn-custom btn-sm" type="button" onClick={togglePasswordVisibility}>
+                {showPassword ? "Hide password" : "Show password"}
               </button>
             </div>
           </div>
           <div className="col-md-6">
             <div className="mb-3">
+            {/* <div className="input-group"> */}
               <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
               <input type={showPassword ? "text" : "password"} className="form-control" id="confirmPassword" name="confirmPassword" value={confirmPassword} onChange={onInputChange} required />
-              <button className="btn btn-outline-success" type="button" onClick={togglePasswordVisibility}>
-                {showPassword ? "Hide" : "Show"}
-              </button>
-            </div>
+            {/* </div> */}
           </div>
         </div>
+        </div>
         <div className="mb-3">
-          <button type="submit" className="btn btn-success">Register</button>
-          <Link className="btn btn-danger" to="/">Cancel</Link>
+          <button type="submit" className="btn btn-success mx-2">Register</button>
+          <Link className="btn btn-danger mx-2" to="/">Cancel</Link>
         </div>
       </form>
+      </div>
+    </div>
     </div>
   );
 }

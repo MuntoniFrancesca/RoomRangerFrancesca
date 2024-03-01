@@ -29,10 +29,8 @@ const HomeAttendant = () => {
       setAssignedRooms(response.data);
     } catch (error) {
       if (error.response && error.response.status === 403) {
-        // 403 error - Unauthorized, navigate to login page
         navigate('/login');
       } else {
-        // Handle other errors
         console.error('Error:', error);
       }
     }

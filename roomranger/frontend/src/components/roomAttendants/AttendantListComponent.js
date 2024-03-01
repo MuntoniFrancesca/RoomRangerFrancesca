@@ -57,7 +57,7 @@ export default function AttendantListComponent() {
     <div className='container'>
         <div className='row mt-3'>
             <div className='col'>
-        <Link className='btn btn-custom' to='/landing/attendants/add'>Add New Attendant</Link>
+        <Link className='btn btn-custom' to='/landing/attendants/add'>Add Attendant</Link>
           </div>
         <form>
           <div className='py-2 '></div>
