@@ -160,21 +160,21 @@ export default function AddAttendant() {
               />
             </div>
             <div className="row">
-            <div className="md-3">
-              <label htmlFor="notes" className="form-label">
-                Notes
-              </label>
-              <textarea
-                className="form-control"
-                id="notes"
-                name="notes"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="col-md-3">
-              <label htmlFor="workingDays" className="form-label">
-                Working Days
-              </label>
+              <div className="md-3">
+                <label htmlFor="notes" className="form-label">
+                  Notes
+                </label>
+                <textarea
+                  className="form-control"
+                  id="notes"
+                  name="notes"
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="col-md-3">
+                <label htmlFor="workingDays" className="form-label">
+                  Working Days
+                </label>
                 {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day) => (
                   <div className="col-md-3" key={day}>
                     <div className="form-check">
@@ -190,18 +190,18 @@ export default function AddAttendant() {
                       <label className="form-check-label" htmlFor={day}>
                         {day}
                       </label>
-                      
+
                     </div>
                   </div>
                 ))}
               </div>
-         
-            <button type="submit" className="btn btn-action mx-2">
-              Submit
-            </button>
-            <Link className="btn btn-danger mx-2" to="/landing/attendants">
-              Cancel
-            </Link>
+
+              <button type="submit" className="btn btn-action mx-2">
+                Submit
+              </button>
+              <Link className="btn btn-danger mx-2" to="/landing/attendants">
+                Cancel
+              </Link>
             </div>
           </form>
         </div>
