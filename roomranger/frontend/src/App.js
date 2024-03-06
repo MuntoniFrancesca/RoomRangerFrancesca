@@ -13,7 +13,7 @@ import AttendantListComponent from './components/roomAttendants/AttendantListCom
 import AddAttendant from './components/roomAttendants/AddAttendant';
 import Update from './components/roomAttendants/Update';
 import Profile from './components/roomAttendants/Profile';
-import { Footer } from './components/Footer';
+import Footer from './components/Footer';
 import LoginPage from './components/loginPage/LoginPage';
 import HomeManager from './components/manager/HomeManager';
 import ErrorComponent from './components/ErrorComponent';
@@ -93,9 +93,9 @@ function App() {
             </Route>
           </Route>
         </Routes>
-        <Footer />
       </Router>
       </AuthProvider>
+    <Footer />
     </div >
   );
 }

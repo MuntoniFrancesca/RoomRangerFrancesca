@@ -1,11 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-export const Footer = () => {
+import React from "react";
+
+function Footer() {
   return (
-    <div>
-        <footer className='footer'>
-            <span className='text-muted'>All Rights reserved 2024 | @WomenThatCode</span>
-        </footer>
-    </div>
+    <footer>
+      <section>
+      <div className="copyright">
+                <p>© 2023 RoomRanger. All rights reserved.</p>
+            </div>
+            </section>
+    </footer>
   )
 }
+
+export default Footer;
