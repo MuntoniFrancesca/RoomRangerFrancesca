@@ -77,3 +77,7 @@ footer section{
 footer h3{
   font-size: 18px;
 }
+
+.custom-input {
+  appearance: auto;
+}
