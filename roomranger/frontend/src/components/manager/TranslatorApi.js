@@ -115,11 +115,11 @@ export default function TranslatorApi() {
         { value: 'zu', label: 'Zulu' },
     ];
 
+
     const [text, setText] = useState('');
     const [value, setValue] = useState('');
     const [fromLanguage, setFromLanguage] = useState('');
     const [toLanguage, setToLanguage] = useState('');
-    // const [languageOptions, setLanguageOptions] = useState('')
 
     const fetchTranslation = async () => {
         const options = {
@@ -171,10 +171,10 @@ export default function TranslatorApi() {
             </select>
         </div>
         <div className="button-container">
-            <button className="btn btn-custom" onClick={handleTranslate}>Translate</button>
+            <button onClick={handleTranslate}>Translate</button>
         </div>
         <div className="result-container">
-            <h3>{value}</h3>
+            <h1>{value}</h1>
         </div>
     </div>
 );
